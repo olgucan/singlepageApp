@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+   <link rel="stylesheet" href="./app.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>Frontend Mentor | Creative single page site</title>
+</head>
+<body>
+  
+   <header>
+     
+     <div ><a href="#"><img src="./assets/desktop/logo.svg" alt=""></a></div>
+     <nav >
+       <ul>
+         <li><a href="#">About</a></li>
+         <li><a href="#">Service</a></li>
+         <li><a href="#">Projects</a></li>
+         <li ><a class="schedule" href="#">Schedule a Call</a></li>
+       </ul>
+       
+     </nav>
+     <a href="#" class="toggle">toggle </a>
+   </header>
+
+  <section id="branding">
+   
+     <div class="subbrand">
+      <h1>
+        Branding & website design agency
+      </h1>
+      <p>We specialize in visual storytelling by creating cohesive brand and website design 
+        solutions for small businesses, giving lasting impressions to audiences in a digital world.</p>
+      <a href="#" class="learn btn btn-danger ">Learn more</a>
+     </div>
+     <img src="./assets/desktop/image-hero.jpg" alt="" class=" hero img-fluid"> 
+    </section>
+    <section id="design" >
+      <img class="pattern" src="./assets/desktop/bg-pattern-wave-red.svg" alt="">
+      <div class="foto"></div>
+      <div class=" strateji "><div><h2><span>Design</span>  is strategic.</h2>
+       <p>A well-crafted design strategy consistently produces desired outcomes and brand awareness. 
+        We are firm believers that success lies in creative collaboration with our clients.
+      </p>
+      <a href="#" class="call">Schedule a call</a>
+      </div>
+    </div>
+    </section>
+
+    <section class="section3">
+      <div class="approach"><h1>Our approach for creating a winning brand</h1></div>
+      <div class="numberscont">
+      <div class="numbers">
+        <h1 class="approach2">Our approach for creating a winning brand</h1>
+        <div>
+          <h3>  Brand strategy</h3>
+          <p>Keeping the brand design unique and meaningful helps in communicating the brand’s timeless 
+            value effectively.</p>
+          </div>
+        <div>
+        <h3>  Brand design</h3>
+        <p>Keeping the brand design unique and meaningful helps in communicating the brand’s timeless 
+          value effectively.</p>
+        </div>
+        <div>
+          <h3> Web design</h3>
+          <p>A beautifully crafted website is the best tool for brand awareness, and ultimately results 
+            in increased revenues.</p>
+          </div>
+      </div>
+    </div>
+    </section>
+
+
+     <section id="slide">
+       <div class="guide px-4"><div>
+          <h2>Brand naming & guidelines</h2>
+          <div class="mt-5"><img src="./assets/desktop/icon-arrow-previous.svg" alt="" class="prev"> 
+            <img src="./assets/desktop/icon-arrow-next.svg" alt="" class="next "></div>
+       </div>
+      </div>
+       <div class="myslider"><img src="./assets/desktop/image-slide-1.jpg" alt="" class=" "></div>
+
+     </section>
+
+    <footer >
+      <img src="./assets/desktop/bg-pattern-wave-red.svg" alt="" class="footericon">
+     <h1>
+      Let's build something great together.
+     </h1>
+     <button class="btn btn-danger">Schedule a Call</button>
+    </footer>
+  
+
+  <!-- 
+
+  
+
+  Lean Product Roadmap 
+  2019 project
+
+  Brand identity & merchandise
+  New Majestic Hotel 
+  2018 Project
+  
+  Brand identity & web design
+  Crypto Dashboard
+  2016 Project
+
+  
+
+   --> 
+
+  <script>
+    document.querySelector(".toggle").addEventListener("click",(e)=>{
+        let mycontainer = document.createElement("div")
+        mycontainer.classList.add("newcontainer")
+        let mylist = document.createElement("ul")
+        mylist.classList.add("toggleList")
+        mylist.innerHTML=`  <li><a href="https://www.w3schools.com" target="_blank">About</a></li>
+         <li><a href="https://www.youtube.com" target="_blank">Service</a></li>
+         <li><a href="https://www.twitter.com" target="_blank">Projects</a></li>
+         <li ><a class="" href="https://www.instagram.com" target="_blank">Schedule a Call</a></li> 
+         ` 
+          let close=document.createElement("div")
+          close.className="close"
+          close.innerHTML="<span></span><span></span>"
+         mycontainer.appendChild(mylist)
+         mycontainer.appendChild(close)
+         document.body.insertBefore(mycontainer,document.body.children[0])
+        mycontainer.addEventListener("click",((e)=> {
+      // let mycontainer2=document.querySelector(".newcontainer")
+    // mycontainer2.classList.add("remove")
+    console.log(e.target.parentElement)
+    if (e.target.parentElement.classList.contains("close")) {
+      e.currentTarget.classList.add("remove")
+    }
+    else{return}
+    
+  
+     }))  
+    })
+    let myslider1 = document.querySelector(".myslider img")
+     let paragraph1 = myslider1.src;
+     let regex1 = /[0-9]/g;
+      let found1 = parseInt(paragraph1.match(regex1));
+      console.log(found1)
+    document.querySelector(".next").addEventListener("click",(e)=> {
+    //  let myslider1 = document.querySelector(".myslider img")
+    //  let paragraph1 = myslider1.src;
+    //  let regex1 = /[0-9]/g;
+    //   let found1 = parseInt(paragraph1.match(regex1));
+    //   console.log(found1)
+   
+      found1++
+  
+    if (found1===4){
+      found1=1
+    }
+    
+      myslider1.src=`./assets/desktop/image-slide-${(found1)}.jpg`
+    })
+    document.querySelector(".prev").addEventListener("click",(e)=> {
+    //  let myslider2 = document.querySelector(".myslider img")
+    //  let paragraph2 = myslider2.src;
+    //  let regex2 = /[0-9]/g;
+    //   let found2 = parseInt(paragraph2.match(regex2));
+    //    console.log(typeof found2)
+    found1--
+    if (found1===0){
+      found1=3
+    }
+    
+      myslider1.src=`./assets/desktop/image-slide-${(found1)}.jpg`
+    })
+  </script>
+</body>
+</html>
